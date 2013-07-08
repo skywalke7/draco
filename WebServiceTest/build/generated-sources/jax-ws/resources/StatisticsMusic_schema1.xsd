@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://facade.ws.home.com/" xmlns:tns="http://facade.ws.home.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="getAlbumByArtist" type="tns:getAlbumByArtist"/>
+
+  <xs:element name="getAlbumByArtistResponse" type="tns:getAlbumByArtistResponse"/>
+
+  <xs:element name="getId" type="tns:getId"/>
+
+  <xs:element name="getIdResponse" type="tns:getIdResponse"/>
+
+  <xs:complexType name="getId">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getIdResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlbumByArtist">
+    <xs:sequence>
+      <xs:element name="nameArtist" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlbumByArtistResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:musicalGroup" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="musicalGroup">
+    <xs:sequence>
+      <xs:element name="groupDescription" type="xs:string" minOccurs="0"/>
+      <xs:element name="groupName" type="xs:string" minOccurs="0"/>
+      <xs:element name="groupWeb" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
